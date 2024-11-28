@@ -1,32 +1,33 @@
-const BASE_URL = 'http://localhost:4040';
+const BASE_URL = 'http://localhost:3000';
 
-const newStudentInfo = {
-    id: "4",
-    name: "Piter Liner",
-    age: 21,
-    email: "piter.liner@example.com",
-    phone: "666-9999"
+const newMovieInfo1 = {
+    id: 6,
+    title: "Dead Poets Society",
+    genre: "Drama",
+    director: "Peter Weir",
+    year: 1989
 };
 
-const newStudentInfo2 = {
-    id: "5",
-    name: "amksksksk Liner",
-    age: 21,
-    email: "piter.liner@example.com",
-    phone: "666-9999"
+const newMovieInfo2 = {
+    id: 7,
+    title: "Black Swan",
+    genre: "Drama",
+    director: "Darren Aronofsky",
+    year: 2010
 };
 
-function postStudent(newStudent) {
+
+function postMovie(newMovie) {
     const options = {
         method: "POST",
-        body: JSON.stringify(newStudent),
+        body: JSON.stringify(newMovie),
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
         },
     };
 
-    return fetch(`${BASE_URL}/students`, options).then(r => r.json()).then(data => console.log(data));
+    return fetch(`${BASE_URL}/movies`, options).then(r => r.json()).then(data => console.log(data));
 }
 
-postStudent(newStudentInfo);
-postStudent(newStudentInfo2);
+postMovie(newMovieInfo1);
+postMovie(newMovieInfo2);

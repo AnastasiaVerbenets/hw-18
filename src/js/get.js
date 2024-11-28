@@ -1,13 +1,12 @@
-const BASE_URL = 'http://localhost:4040';
+const BASE_URL = 'http://localhost:3000';
 
-function fetchStudents() {
-    return fetch(`${BASE_URL}/students`).then(r => r.json());
+function fetchMovies() {
+    return fetch(`${BASE_URL}/movies`).then(r => r.json());
 }
 
-fetchStudents();
-
-function fetchStudentById(id) {
-    return fetch(`${BASE_URL}/students/${id}`).then(r => r.json());
+function fetchMovieById(id) {
+    return fetch(`${BASE_URL}/movies/${id}`).then(r => r.json());
 }
 
-fetchStudentById(3)
+fetchMovies();
+fetchMovieById(2);

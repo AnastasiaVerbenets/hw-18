@@ -1,13 +1,16 @@
 const BASE_URL = 'http://localhost:3000';
 
 const movieToUpdate = {
-    genre: "Drama",
-    year: 2000
+    id: "2",
+    title: "The Godfather",
+    genre: "Thriller",
+    director: "Francis Ford",
+    year: 1970
 };
 
 function updateMovie(updateMovie, movieId) {
     const options = {
-        method: "PATCH",
+        method: "PUT",
         body: JSON.stringify(updateMovie),
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
